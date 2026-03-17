@@ -101,7 +101,7 @@ const Participate = () => {
 
   return (
     <section className="min-h-screen container mx-auto p-2 pt-28">
-      <h2 className="text-2xl font-bold text-white px-2 my-6 font-poppins">Games Included</h2>
+      <h2 className="text-2xl font-bold text-white px-2 my-6 font-poppins">Games Included testing change</h2>
 
       <div className="relative w-full group">
         {/* Enhanced Scroll Buttons with better UX */}
