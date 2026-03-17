@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+input,
+select {
+  @apply mt-1 px-4 py-1.5 border border-zinc-500 rounded-lg outline-none ring-2 ring-transparent bg-zinc-800;
+}
+
+label {
+  @apply font-medium text-sm;
+}

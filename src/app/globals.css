@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&family=Poppins:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  /* Background Images */
+  --background-image-states: url('/assets/images/Rectangle 2655.png');
+
+  /* Colors */
+  --color-statTotal: #f97316;
+  --color-statAverage: #22c55e;
+  --color-statNegative: var(--defendr-red);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-defendrBg: var(--defendr-bg);
+  --color-defendrBlack: var(--defendr-black);
+  --color-defendrRed: var(--defendr-red);
+  --color-defendrHoverRed: var(--defendr-hoverRed);
+  --color-defendrBlue: var(--defendr-blue);
+  --color-defendrBeige: var(--defendr-beige);
+  --color-defendrWhite: var(--defendr-white);
+  --color-defendrSilver: var(--defendr-silver);
+  --color-defendrGreen: var(--defendr-green);
+  --color-defendrLightGrey: var(--defendr-LightGrey);
+  --color-defendrLightBlack: var(--defendr-lightBlack);
+  --color-defendrGhostGrey: var(--defendr-ghostGrey);
+  --color-defendrDarkGrey: var(--defendr-DarkGrey);
+  --color-defendrLightRed: var(--defendr-lightRed);
+  --color-defendrGrey: var(--defendr-Grey);
+
+  /* Font Families */
+  --font-family-poppins: var(--font-poppins);
+
+  /* Breakpoints */
+  --breakpoint-xs: 400px;
+  --breakpoint-2xs: 600px;
+  --breakpoint-3xl: 1680px;
+  --breakpoint-4xl: 2200px;
+  --breakpoint-6xl: 2500px;
+
+  /* Border Radius */
+  --radius-5xl: 40px;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+    --defendr-red: #d62555;
+
+    /* Defendr Theme Variables */
+    --defendr-input: #302f31;
+    --defendr-bg: #161616;
+    --defendr-black: #0e0e0e;
+    --defendr-gray: #23272b;
+    --defendr-blue: #0038ed;
+    --defendr-beige: #f6d091;
+    --defendr-white: #fafafa;
+    --defendr-green: #45a245;
+    --defendr-silver: #d9d9d9;
+    --defendr-LightGrey: #8692aa;
+    --defendr-lightBlack: #212529;
+    --defendr-hoverRed: #d62755ba;
+    --defendr-ghostGrey: #b0b8c9;
+    --defendr-DarkGrey: #b0acac;
+    --defendr-Grey: #343a40;
+    --defendr-lightRed: rgba(214, 39, 85, 0.38);
+    --font-poppins: 'Poppins', sans-serif;
+  }
+
+  /*
+    The default border color compatibility styles for Tailwind CSS v4
+  */
+  /* *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  } */
+
+  /* Kill horizontal scroll globally */
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Dark mode body styling */
+  html.dark body {
+    background-color: #18181b;
+    color: #f3f4f6;
+  }
+
+  /* Light mode body styling */
+  html:not(.dark) body {
+    background-color: #ffffff;
+    color: #171717;
+  }
+}
+
+@layer components {
+  .font-poppins {
+    font-family: var(--font-poppins) !important;
+  }
+
+  .home-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .home-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .buttonHeaderAnimation2 {
+    position: relative;
+    color: white;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.75rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+
+  .buttonHeaderAnimation2:hover {
+    background-color: #8080804d;
+  }
+
+  .buttonHeaderAnimation {
+    position: relative;
+  }
+
+  .buttonHeaderAnimation::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    background-color: #d62755;
+    transition: 0.3s linear;
+  }
+
+  .buttonHeaderAnimation:hover::after,
+  .buttonHeaderAnimation.active::after {
+    width: 80%;
+  }
+}
+
+@layer utilities {
+  /* Custom Utility Classes */
+  .flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flexBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flexStart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .flexEnd {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .signup-btn-font {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .custom-primary-checkbox {
+    border-color: var(--defendr-red) !important;
+    background: transparent;
+  }
+
+  .custom-primary-checkbox:checked {
+    background: transparent;
+    box-shadow: 0 0 0 2px var(--defendr-red);
+    accent-color: var(--defendr-red);
+  }
+
+  /* Date & Time Picker Styling (Defendr Theme) */
+  input[type='xxxdate']::-webkit-calendar-picker-indicator,
+  input[type='time']::-webkit-calendar-picker-indicator {
+    background-color: transparent !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+  }
+
+  input[type='xxxdate']::-webkit-calendar-picker-indicator:hover,
+  input[type='time']::-webkit-calendar-picker-indicator:hover {
+    background-color: rgba(233, 30, 99, 0.1) !important;
+  }
+
+  /* Text styling */
+  input[type='xxxdate']::-webkit-datetime-edit,
+  input[type='time']::-webkit-datetime-edit {
+    color: white !important;
+  }
+
+  input[type='xxxdate']::-webkit-datetime-edit-fields-wrapper,
+  input[type='time']::-webkit-datetime-edit-fields-wrapper {
+    background: transparent !important;
+  }
+
+  input[type='xxxdate']::-webkit-datetime-edit-text,
+  input[type='time']::-webkit-datetime-edit-text {
+    color: #9ca3af !important;
+    padding: 0 1px !important;
+  }
+
+  input[type='xxxdate']::-webkit-datetime-edit-month-field,
+  input[type='xxxdate']::-webkit-datetime-edit-day-field,
+  input[type='xxxdate']::-webkit-datetime-edit-year-field,
+  input[type='time']::-webkit-datetime-edit-hour-field,
+  input[type='time']::-webkit-datetime-edit-minute-field,
+  input[type='time']::-webkit-datetime-edit-ampm-field {
+    color: white !important;
+    background: transparent !important;
+  }
+
+  /* Focus styling */
+  input[type='xxxdate']::-webkit-datetime-edit-month-field:focus,
+  input[type='xxxdate']::-webkit-datetime-edit-day-field:focus,
+  input[type='xxxdate']::-webkit-datetime-edit-year-field:focus,
+  input[type='time']::-webkit-datetime-edit-hour-field:focus,
+  input[type='time']::-webkit-datetime-edit-minute-field:focus,
+  input[type='time']::-webkit-datetime-edit-ampm-field:focus {
+    background-color: #e91e63 !important;
+    color: white !important;
+    border-radius: 2px !important;
+    outline: none !important;
+  }
+
+  /* Custom icons for date & time */
+  input[type='xxxdate']::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23E91E63' viewBox='0 0 20 20'%3e%3cpath d='M6 2a1 1...'%3e%3c/path%3e%3c/svg%3e") !important;
+    background-size: 16px 16px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+
+  input[type='time']::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23E91E63' viewBox='0 0 20 20'%3e%3cpath d='M10 18a8 8...'%3e%3c/path%3e%3c/svg%3e") !important;
+    background-size: 16px 16px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+
+  /* Firefox + Misc */
+  input[type='xxxdate'],
+  input[type='time'] {
+    color-scheme: dark !important;
+    accent-color: #e91e63 !important;
+  }
+
+  input[type='xxxdate']:focus,
+  input[type='time']:focus {
+    box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2) !important;
+  }
+
+  ::selection {
+    background-color: var(--defendr-red);
+    color: var(--defendr-black);
+  }
+
+  /* Scrollbar Utilities */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Mobile-friendly scrollbar */
+  .mobile-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-track {
+    background: rgba(55, 65, 81, 0.3);
+    border-radius: 10px;
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d62555 0%, #b91c3c 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(55, 65, 81, 0.3);
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #e11d48 0%, #dc2626 100%);
+  }
+
+  /* Firefox mobile scrollbar */
+  .mobile-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #d62555 rgba(55, 65, 81, 0.3);
+  }
+
+  /* 3D Effects for Floating Cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Custom 3D transforms */
+  .hover\:rotate-y-5:hover {
+    transform: rotateY(5deg);
+  }
+}
+
+/* Animations */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Notification bell ring animation */
+@keyframes bell-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-12deg);
+  }
+  45% {
+    transform: rotate(9deg);
+  }
+  60% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-bell-ring {
+  animation: bell-ring 0.7s ease-in-out both;
+  transform-origin: top center;
+}

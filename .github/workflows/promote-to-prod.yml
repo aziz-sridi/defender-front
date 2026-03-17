@@ -1,0 +1,32 @@
+name: Promote Dev to Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync_main_to_dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: dev
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Sync dev to main branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git remote set-url origin git@github-defendr-front-new:DEFENDR-Esports/defendr-front-new.git
+          git fetch origin main
+          git checkout main || git checkout -b main origin/main
+          git reset --hard origin/dev
+          git push origin main --force
+
+      - name: Success
+        run: echo "✅ Successfully synced dev to main! Production deployment will be triggered by push to main."

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4c1cabb8-9595-410b-a61e-944b72c4ec75" name="Changes" comment="update" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="card-component" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zgzmjMN1StoiCc7Kq4qKRrZ3ul" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.Next.js: debug client-side.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ghassen-components",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "D:/Projects/defendr-front-new/src/components/ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/CYBORG/AppData/Roaming/JetBrains/PyCharm2025.1/node/versions/22.17.0/node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Next.js: server-side.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\defendr-front-new\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\Projects\\defendr-front-new\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\defendr-front-new\src\components\ui\TournamentOverview" />
+      <recent name="D:\Projects\defendr-front-new\src\components\ui\TournamentHeader" />
+      <recent name="D:\Projects\defendr-front-new\src\components\ui\Icons" />
+      <recent name="C:\Users\CYBORG\GitHub\defendr-front-new\src\components\ui\Icons" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
+        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4c1cabb8-9595-410b-a61e-944b72c4ec75" name="Changes" comment="" />
+      <created>1752167668889</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752167668889</updated>
+      <workItem from="1752167671876" duration="982000" />
+      <workItem from="1752168709629" duration="703000" />
+      <workItem from="1752170604362" duration="2713000" />
+      <workItem from="1752173503502" duration="1136000" />
+      <workItem from="1752251044703" duration="10066000" />
+      <workItem from="1752310047424" duration="4236000" />
+      <workItem from="1752338606743" duration="1284000" />
+      <workItem from="1752342395187" duration="145000" />
+      <workItem from="1752343336444" duration="3798000" />
+      <workItem from="1752401476664" duration="5039000" />
+      <workItem from="1752420465469" duration="70000" />
+      <workItem from="1752600634865" duration="1733000" />
+      <workItem from="1752657984099" duration="20000" />
+      <workItem from="1752661654737" duration="4939000" />
+      <workItem from="1752829649310" duration="2930000" />
+      <workItem from="1752837159847" duration="177000" />
+      <workItem from="1753101731778" duration="32000" />
+      <workItem from="1753101791440" duration="65000" />
+      <workItem from="1753213775560" duration="1015000" />
+      <workItem from="1753214838927" duration="4859000" />
+      <workItem from="1753262033701" duration="34000" />
+      <workItem from="1753285889403" duration="7756000" />
+      <workItem from="1753295876383" duration="13000" />
+      <workItem from="1753341596449" duration="284000" />
+      <workItem from="1753341916750" duration="6881000" />
+      <workItem from="1753349642782" duration="4015000" />
+      <workItem from="1753369150146" duration="153000" />
+      <workItem from="1753431154134" duration="6278000" />
+      <workItem from="1753866480480" duration="4644000" />
+      <workItem from="1753883778050" duration="8000" />
+      <workItem from="1754042336916" duration="675000" />
+    </task>
+    <task id="LOCAL-00001" summary="tournament details: overview">
+      <option name="closed" value="true" />
+      <created>1752829849000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752829849001</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ignore .idea folder">
+      <option name="closed" value="true" />
+      <created>1753215142684</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753215142684</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1754042422187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754042422187</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tournament details: overview" />
+    <MESSAGE value="ignore .idea folder" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+</project>

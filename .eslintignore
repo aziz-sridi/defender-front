@@ -1,0 +1,4 @@
+# Ignore PM2 ecosystem and deployment scripts
+ecosystem.config.cjs
+scripts/
+*.sh

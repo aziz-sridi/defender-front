@@ -1,0 +1,7 @@
+
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+npm run format       
+npm run lint        
+git add . 

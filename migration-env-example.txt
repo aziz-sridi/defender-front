@@ -1,0 +1,20 @@
+# Image Migration Environment Variables
+# Add these to your .env.local or create a separate .env.migration file
+
+# Cloudflare R2 Configuration
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here
+CLOUDFLARE_ACCESS_KEY_ID=your_access_key_id_here
+CLOUDFLARE_SECRET_ACCESS_KEY=your_secret_access_key_here
+CLOUDFLARE_BUCKET_NAME=your_bucket_name_here
+CLOUDFLARE_PUBLIC_URL=https://pub-ac0646938950482d9e37f5be48f6653b.r2.dev
+
+# Database Configuration
+DATABASE_URL=mongodb://your_mongodb_connection_string_here
+
+# VPS Configuration
+VPS_BASE_URL=https://api.defendr.gg
+
+# Migration Settings (Optional)
+MIGRATION_BATCH_SIZE=10
+MIGRATION_RETRY_ATTEMPTS=3
+MIGRATION_RETRY_DELAY=1000

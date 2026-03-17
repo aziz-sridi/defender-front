@@ -1,0 +1,113 @@
+name: CI/CD reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      deploy_host:
+        required: true
+        type: string
+      deploy_user:
+        required: true
+        type: string
+      frontend_target_dir:
+        required: true
+        type: string
+      repo_url:
+        required: true
+        type: string
+      branch:
+        required: false
+        type: string
+        default: main
+      api_url:
+        required: true
+        type: string
+      environment:
+        required: false
+        type: string
+        default: production
+    secrets:
+      SSH_PRIVATE_KEY:
+        required: true
+
+jobs:
+  deploy_frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy frontend to server
+        env:
+          DEPLOY_HOST: ${{ inputs.deploy_host }}
+          DEPLOY_USER: ${{ inputs.deploy_user }}
+          TARGET_DIR: ${{ inputs.frontend_target_dir }}
+          REPO_URL: ${{ inputs.repo_url }}
+          BRANCH: ${{ inputs.branch }}
+          API_URL: ${{ inputs.api_url }}
+          ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          echo "Deploying $BRANCH to $TARGET_DIR (env: $ENVIRONMENT)"
+
+          ssh -o StrictHostKeyChecking=no "${DEPLOY_USER}@${DEPLOY_HOST}" \
+            "TARGET_DIR='${TARGET_DIR}' REPO_URL='${REPO_URL}' BRANCH='${BRANCH}' API_URL='${API_URL}' ENVIRONMENT='${ENVIRONMENT}' bash -s" <<'ENDSSH'
+              set -euo pipefail
+
+              echo "Deploying branch $BRANCH from $REPO_URL to $TARGET_DIR (env: $ENVIRONMENT)"
+
+              # Clone repo if missing
+              if [ ! -d "${TARGET_DIR}/.git" ]; then
+                rm -rf "${TARGET_DIR}"
+                git clone "${REPO_URL}" "${TARGET_DIR}"
+              fi
+
+              cd "${TARGET_DIR}"
+
+              # Ensure correct branch
+              git fetch --all --prune
+              git checkout "$BRANCH" || git checkout -b "$BRANCH" "origin/$BRANCH"
+              git reset --hard "origin/$BRANCH"
+              git pull origin "$BRANCH"
+
+              # Install dependencies
+              if command -v yarn >/dev/null 2>&1; then
+                yarn install --frozen-lockfile || npm install --legacy-peer-deps
+              else
+                npm install --legacy-peer-deps
+              fi
+
+              npm run build
+
+              # Environment-specific variables
+              if [ "$ENVIRONMENT" = "production" ]; then
+                PM2_PROCESS_NAME="defendr-frontend-production"
+                ECOSYSTEM_FILE="ecosystem.prod.config.cjs"
+              else
+                PM2_PROCESS_NAME="defendr-frontend-development"
+                ECOSYSTEM_FILE="ecosystem.dev.config.cjs"
+              fi
+
+              echo "Using PM2 ecosystem file: ${ECOSYSTEM_FILE}"
+
+              # Check if ecosystem file exists
+              if [ ! -f "${ECOSYSTEM_FILE}" ]; then
+                echo "❌ Error: ${ECOSYSTEM_FILE} not found!"
+                exit 1
+              fi
+
+              # Use startOrReload - handles both new and existing processes
+              pm2 startOrReload "${ECOSYSTEM_FILE}" --only "${PM2_PROCESS_NAME}" --update-env
+
+              # Save PM2 process list
+              pm2 save --force
+
+              # Show process status
+              pm2 list
+
+              echo "✅ PM2 started/reloaded using ${ECOSYSTEM_FILE}"
+          ENDSSH

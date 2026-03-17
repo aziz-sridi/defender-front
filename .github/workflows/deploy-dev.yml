@@ -1,0 +1,20 @@
+name: Deploy Development
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/ci-cd-reusable.yml
+    with:
+      environment: development
+      api_url: 'https://api-dev.defendr.gg'
+      frontend_target_dir: '/home/defendr/DEV/FRONT'
+      deploy_host: ${{ vars.DEPLOY_HOST }}
+      deploy_user: ${{ vars.DEPLOY_USER }}
+      repo_url: 'git@github-defendr-front-new:DEFENDR-Esports/defendr-front-new.git'
+      branch: dev
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
